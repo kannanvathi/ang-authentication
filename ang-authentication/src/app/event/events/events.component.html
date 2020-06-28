@@ -1,0 +1,22 @@
+<div class="container mt-2">
+    <!--   <div class="card card-block mb-2">
+        <h4 class="card-title">Card 1</h4>
+        <p class="card-text">Welcom to bootstrap card styles</p>
+        <a href="#" class="btn btn-primary">Submit</a>
+      </div>   -->
+      <div class="row" *ngIf="events">
+        <div *ngFor= 'let event of events.articles' class="col-md-3 col-sm-6 item">
+          <div class="card item-card card-block">
+          <div class="card-title text-right">
+            <a [href]="event.url" target="_blank"><span class="material-icons mr-2">link</span></a> {{event.author}}</div>
+            <img [src]="event.urlToImage" alt="Photo of sunset">
+            <h5 class="item-card-title mt-3 mb-3">{{event.publishedAt}} • </h5>
+            <p>{{event.source.name}}</p>
+            <p class="card-text">{{event.title}}</p> 
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    

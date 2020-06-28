@@ -1,0 +1,26 @@
+<div class="row" style="margin-top: 15%">
+    <div class="alert alert-warning alert-dismissible fade show col-sm-12" *ngIf = "error" role="alert">
+        <strong>{{error.statusText}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="col-sm-6 offset-sm-3">
+        <div class="card p-5">
+            <div class="card-body">
+            <form #myForm="ngForm" (ngSubmit)="login(myForm)">
+                <div class="form-group">
+                <input type="email" class="form-control" name="email" [(ngModel)] = "userModel.email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                <input type="password" class="form-control" name="password" [(ngModel)] = "userModel.password" placeholder="Password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a class="nav-link" routerLink="/register" routerLinkActive="active" style="text-align: right;">Register</a>
+            </form>
+            
+            </div>
+        </div>
+    </div>
+</div>
